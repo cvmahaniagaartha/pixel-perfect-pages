@@ -54,10 +54,10 @@ const stages = [
 
 function Brand() {
   return (
-    <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="Nexora Systems, kembali ke atas">
-      <span className="brand-mark" aria-hidden="true">N</span>
-      <span className="font-display text-sm font-bold leading-[0.9] uppercase">
-        Nexora<br /><span className="text-[0.58rem] font-semibold tracking-[0.18em] text-foreground/70">Systems</span>
+    <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="Vector Systems, kembali ke atas">
+      <span className="brand-mark" aria-hidden="true">V</span>
+      <span className="logo-name uppercase">
+        Vector<br /><span className="logo-sublabel">Systems</span>
       </span>
     </a>
   );
@@ -79,18 +79,18 @@ function Index() {
         <div className="hero-shade absolute inset-0" />
         <header className="relative z-10 mx-auto grid max-w-[1480px] grid-cols-[minmax(0,1fr)_auto] items-center gap-5 px-6 py-7 text-hero-foreground md:px-12 lg:grid-cols-[auto_1fr_auto]">
           <Brand />
-          <nav className="hidden min-w-0 items-center justify-center gap-8 text-[0.78rem] font-medium lg:flex" aria-label="Navigasi utama">
+          <nav className="nav-links hidden min-w-0 items-center justify-center gap-8 lg:flex" aria-label="Navigasi utama">
             <a href="#solutions">Solusi</a><a href="#industries">Industri</a><a href="#stages">Tahapan</a>
             <a href="#service">Layanan</a><a href="#about">Tentang kami</a><a href="#contact">Kontak</a>
           </nav>
-          <a href="#contact" className="hidden items-center gap-8 rounded-sm bg-primary px-6 py-3 text-xs font-semibold text-primary-foreground lg:flex">Diskusikan proyek <ArrowRight size={15} /></a>
+          <a href="#contact" className="button-label hidden items-center gap-8 rounded-sm bg-primary px-6 py-3 text-primary-foreground lg:flex">Diskusikan proyek <ArrowRight size={15} /></a>
           <a href="#solutions" aria-label="Buka menu" className="grid size-10 place-items-center border border-hero-foreground/25 lg:hidden"><Menu size={20} /></a>
         </header>
 
         <div className="relative z-10 mx-auto flex min-h-[550px] max-w-[1480px] items-end px-6 pb-14 md:px-12 lg:min-h-[650px] lg:pb-20">
           <div className="max-w-[700px] text-hero-foreground">
-            <h1 className="font-display text-[clamp(2.75rem,5.5vw,5rem)] font-semibold leading-[1.01]">Teknik, layanan,<br />dan logistik<br />dalam satu proses</h1>
-            <p className="mt-7 max-w-[490px] text-sm leading-6 text-hero-foreground/78 md:text-base">Kami menyediakan sistem teknik dan peralatan untuk fasilitas komersial dan industri. Andal. Tepat waktu. Dengan satu pihak yang bertanggung jawab.</p>
+            <h1 className="hero-title">Teknik, layanan,<br />dan logistik<br />dalam satu proses</h1>
+            <p className="hero-body mt-7 max-w-[490px] text-hero-foreground/78">Kami menyediakan sistem teknik dan peralatan untuk fasilitas komersial dan industri. Andal. Tepat waktu. Dengan satu pihak yang bertanggung jawab.</p>
             <div className="mt-8 flex flex-wrap gap-4"><ArrowLink>Diskusikan proyek</ArrowLink><ArrowLink light>Lihat solusi</ArrowLink></div>
           </div>
         </div>
@@ -100,8 +100,8 @@ function Index() {
       <section id="about" className="mx-auto grid max-w-[1480px] gap-12 px-6 py-20 md:px-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-24">
         <div className="max-w-[570px]">
           <p className="eyebrow">Filosofi kami</p>
-          <h2 className="section-title mt-8">Menghadirkan sistem<br />yang dapat Anda<br />andalkan</h2>
-          <p className="mt-7 max-w-[540px] text-sm leading-6 text-muted-foreground">Kami menyatukan keahlian teknik, peralatan berkualitas, logistik terencana, dan layanan dalam satu proses—mulai dari perancangan hingga pengoperasian tanpa gangguan.</p>
+          <h2 className="philosophy-title mt-8">Menghadirkan sistem<br />yang dapat Anda<br />andalkan</h2>
+          <p className="section-body mt-7 max-w-[540px] text-muted-foreground">Kami menyatukan keahlian teknik, peralatan berkualitas, logistik terencana, dan layanan dalam satu proses—mulai dari perancangan hingga pengoperasian tanpa gangguan.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             <div className="trust-item"><ShieldCheck /><span>Andal dan<br />berkualitas</span></div>
             <div className="trust-item"><Clock3 /><span>Tepat waktu<br />dan sesuai anggaran</span></div>
@@ -120,8 +120,8 @@ function Index() {
               <div className="solution-shade absolute inset-0" />
               <div className="relative flex h-full min-h-[510px] flex-col justify-end p-7 text-hero-foreground md:p-8">
                 <span className="mb-auto text-sm font-medium">{solution.number}</span>
-                <h3 className="font-display max-w-[290px] text-2xl font-semibold leading-tight">{solution.title}</h3>
-                <p className="mt-3 max-w-[330px] text-sm leading-5 text-hero-foreground/75">{solution.description}</p>
+                <h3 className="card-title max-w-[290px]">{solution.title}</h3>
+                <p className="card-description mt-3 max-w-[330px] text-hero-foreground/75">{solution.description}</p>
                 <a href="#contact" aria-label={`Pelajari ${solution.title}`} className="mt-7 grid size-12 place-items-center rounded-full bg-background text-foreground"><ArrowRight size={19} /></a>
               </div>
             </article>
@@ -134,9 +134,9 @@ function Index() {
         <div className="grid overflow-hidden rounded-[22px] border border-border md:grid-cols-2 lg:grid-cols-4">
           {stages.map(([number, title, copy], index) => (
             <article key={number} className={`stage p-7 lg:p-8 ${index ? "border-t border-border md:border-l md:border-t-0" : ""}`}>
-              <div className="flex items-center justify-between text-muted-foreground"><span className="font-display text-4xl font-medium">{number}</span><span className="grid size-8 place-items-center rounded-full bg-foreground text-background"><ArrowRight size={14} /></span></div>
-              <h3 className="mt-7 font-display text-base font-semibold">{title}</h3>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">{copy}</p>
+              <div className="flex items-center justify-between text-muted-foreground"><span className="step-number">{number}</span><span className="grid size-8 place-items-center rounded-full bg-foreground text-background"><ArrowRight size={14} /></span></div>
+              <h3 className="step-heading mt-7">{title}</h3>
+              <p className="card-description mt-3 text-muted-foreground">{copy}</p>
             </article>
           ))}
         </div>
@@ -144,9 +144,9 @@ function Index() {
 
       <section id="service" className="mx-auto max-w-[1480px] px-6 pb-16 md:px-12 lg:pb-20">
         <div id="contact" className="cta-panel grid items-center gap-8 rounded-[24px] bg-primary px-8 py-9 text-primary-foreground md:grid-cols-[1.1fr_1fr_auto] md:px-12">
-          <h2 className="font-display text-2xl font-medium leading-tight md:text-3xl">Siap mendiskusikan<br />proyek Anda?</h2>
-          <p className="text-xs leading-5 text-primary-foreground/75">Hubungi kami—kami akan memilih solusi yang tepat dan menyiapkan penawaran untuk kebutuhan Anda.</p>
-          <a href="mailto:hello@nexorasystems.id" className="flex items-center justify-between gap-10 rounded-sm bg-background px-7 py-4 text-xs font-semibold text-foreground">Diskusikan proyek <ArrowRight size={16} /></a>
+          <h2 className="cta-title">Siap mendiskusikan<br />proyek Anda?</h2>
+          <p className="card-description text-primary-foreground/75">Hubungi kami—kami akan memilih solusi yang tepat dan menyiapkan penawaran untuk kebutuhan Anda.</p>
+          <a href="mailto:hello@nexorasystems.id" className="button-label flex items-center justify-between gap-10 rounded-sm bg-background px-7 py-4 text-foreground">Diskusikan proyek <ArrowRight size={16} /></a>
         </div>
       </section>
     </main>
